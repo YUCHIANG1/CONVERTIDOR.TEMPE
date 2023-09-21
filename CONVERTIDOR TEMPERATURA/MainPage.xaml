@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CONVERTIDOR_TEMPERATURA.MainPage">
+
+    <ContentPage.Resources>
+        <!-- Estilo para el título -->
+        <Style x:Key="TituloLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            <Setter Property="Margin" Value="0,20,0,10" />
+        </Style>
+
+        <!-- Estilo para los Entry (cuadros de entrada) -->
+        <Style x:Key="EntryStyle" TargetType="Entry">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="Keyboard" Value="Numeric" />
+            <Setter Property="PlaceholderColor" Value="Gray" />
+            <Setter Property="Margin" Value="0,10" />
+        </Style>
+
+        <!-- Estilo para los botones -->
+        <Style x:Key="BotonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="BackgroundColor" Value="#2196F3" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="5" />
+            <Setter Property="Margin" Value="0,10" />
+        </Style>
+
+        <!-- Estilo para las etiquetas de resultado -->
+        <Style x:Key="ResultadoLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="TextColor" Value="Green" />
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        </Style>
+    </ContentPage.Resources>
+
+    <StackLayout Padding="20">
+        <!-- Título -->
+        <Label Text="Convertidor" Style="{StaticResource TituloLabelStyle}" />
+
+        <!-- Convertir peso: Libras a Kilogramos -->
+        <Entry Placeholder="Libras" x:Name="librasEntry" Style="{StaticResource EntryStyle}" />
+        <Button Text="Convertir Peso" Clicked="ConvertirPesoClicked" Style="{StaticResource BotonStyle}" />
+        <Label Text="" x:Name="resultadoPesoLabel" Style="{StaticResource ResultadoLabelStyle}" />
+
+        <!-- Convertir volumen: Litros a Galones -->
+        <Entry Placeholder="Litros" x:Name="litrosEntry" Style="{StaticResource EntryStyle}" />
+        <Button Text="Convertir Volumen" Clicked="ConvertirVolumenClicked" Style="{StaticResource BotonStyle}" />
+        <Label Text="" x:Name="resultadoVolumenLabel" Style="{StaticResource ResultadoLabelStyle}" />
+
+        <!-- Convertir temperatura: Celsius a Fahrenheit -->
+        <Entry Placeholder="Celsius" x:Name="celsiusEntry" Style="{StaticResource EntryStyle}" />
+        <Button Text="Convertir Temperatura" Clicked="ConvertirTemperaturaClicked" Style="{StaticResource BotonStyle}" />
+        <Label Text="" x:Name="resultadoTemperaturaLabel" Style="{StaticResource ResultadoLabelStyle}" />
+    </StackLayout>
+</ContentPage>
